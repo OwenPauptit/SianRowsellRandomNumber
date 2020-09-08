@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<style>
+    body{
+        background-color: aliceblue;
+    }
+    .main{
+        text-align: center;
+        margin-top: 5%;
+    }
+    p{
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: 72px;
+        font-weight: bolder;
+        color: #675ca6;
+    }
+    .btn{
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: x-large;
+        font-weight: bold;
+        color:aliceblue;
+        padding: 1%;
+        border-radius: 6%;
+        background-color: #675ca6;
+    }
+    img{
+    }
+
+
+</style>
+
+<div class="main">
+
+    <img src="sian-rowsell-logo.png">
+
+    <p id="count">Hello!</h3>
+
+    <form>
+        <input type="button" name="butt" class="btn" value="Click me!" onclick="OnOff()" />
+    </form>
+</div>
+
+<script>
+    var counter = 0;
+    var timer;
+    var isRunning = false;
+
+    function RandomCounter(){
+        counter = Math.floor(Math.random() * 100) + 1;
+        document.getElementById("count").innerHTML = counter;
+    }
+
+    function OnOff(){
+        if (isRunning){
+            clearInterval(timer);
+        }
+        else{
+            timer = setInterval(function () {
+                RandomCounter();
+            }, 100);
+        }
+        isRunning = !isRunning;
+    }
+
+
+</script>
+
+</body>
+</html>
